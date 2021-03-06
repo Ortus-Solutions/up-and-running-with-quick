@@ -1,19 +1,16 @@
-# Tentative Schedule (times in CST)
+# Schedule (times in CST)
 ## Day 1
 –
-09:00 AM - Introduction
-    + Meet students.
-    + Write down what they want to take away from the workshop/what questions they have we can answer in the workshop or tomorrow during Q&A
-    + Go over course outline.
+09:00 AM - Introductions
 09:30 AM - Installation and Setup
 10:00 AM - **EXERCISE:** Installation and Setup
 10:30 AM - Break
-10:45 AM - Configure cbauth and cbsecurity
-11:15 AM - **EXERCISE:** Configure cbauth and cbsecurity
+10:45 PM - The Quick Philosophy
+11:00 AM - Tour the app - dependencies, migrations, User entity, cbauth, and cbsecurity
+11:30 AM - **EXERCISE:** Capture Additional User Information
 12:00 PM - Lunch Break
-01:00 PM - The Quick Philosophy
-01:15 PM - Defining Entities and `belongsTo` Relationships
-01:30 PM - **EXERCISE:** Define a Post entity and list all Posts (`index` route)
+01:00 PM - Defining Entities and `belongsTo` Relationships
+01:15 PM - **EXERCISE:** Define a Post entity and list all Posts (`index` route)
 01:45 PM - Creating Entities
 02:15 PM - **EXERCISE:** Create a Post (`new` and `create` routes)
 02:45 PM - Break
@@ -41,6 +38,4 @@
 02:30 PM - Break
 02:45 PM - **EXERCISE:** Add future publishing feature using TDD and Quick
 03:30 PM - Q&A
-    + When to not use Quick
-    + Migrating from ColdFusion ORM
 04:00 PM - Finish

@@ -1,3 +1,3 @@
 # TODOs
 
-+ [ ] Migrate `quick-with-auth` to use `cbsecurity` instead of `cbguard`.
++ [x] Migrate `quick-with-auth` to use `cbsecurity` instead of `cbguard`.
