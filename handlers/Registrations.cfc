@@ -12,6 +12,8 @@ component {
 		var result = validateModel(
 			target = rc,
 			constraints = {
+                "firstName": { "required": true },
+                "lastName": { "required": true },
 				"email" : {
 					"required" : true,
 					"type" : "email",
@@ -28,7 +30,12 @@ component {
 			return;
 		}
 
-		var user = getInstance( "User" ).create( { "email" : rc.email, "password" : rc.password } );
+		var user = getInstance( "User" ).create( {
+            "firstName": rc.firstName,
+            "lastName": rc.lastName,
+            "email" : rc.email,
+            "password" : rc.password
+        } );
 
 		auth.login( user );
 
