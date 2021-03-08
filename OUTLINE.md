@@ -13,8 +13,10 @@
 4. Make sure the registration and log in pages are working.
 
 ## The Quick Philosophy (15 minutes)
-TODO: Needs examples of each.
-+ Give relevant names to important collections of SQL code. (scopes, relationships, etc.) + Make queries easy to compose at runtime to get the exact data you want in the most efficient way (subselects, eager loading, etc.)
++ ORM: Map database tables to CFCs
++ ActiveRecord
++ Give relevant names to important collections of SQL code. (scopes, relationships, etc.)
++ Make queries easy to compose at runtime to get the exact data you want in the most efficient way (subselects, eager loading, etc.)
 + Get out of your way when you need or want to write barebones SQL.
 
 ## Tour the App (30 minutes)
