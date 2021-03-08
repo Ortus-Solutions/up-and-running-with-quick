@@ -31,6 +31,11 @@
                         <a href="#event.buildLink( "login" )#" class="nav-link">Log In</a></li>
                 <cfelse>
                     <li class="nav-item">
+                        <span class="navbar-text">
+                            Hello, #auth().user().getFullName()#
+                        </span>
+                    </li>
+                    <li class="nav-item">
                         <a href="#event.buildLink( "logout" )#" class="nav-link">Log Out</a></li>
                 </cfif>
 			</ul>

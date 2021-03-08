@@ -32,6 +32,10 @@ component extends="quick.models.BaseEntity" accessors="true" {
 		return newEntity().findOrFail( arguments.id );
 	}
 
+    public string function getFullName() {
+        return "#getFirstName()# #getLastName()#";
+    }
+
 	public struct function getMemento(){
 		return { "email" : variables.getEmail() };
 	}
