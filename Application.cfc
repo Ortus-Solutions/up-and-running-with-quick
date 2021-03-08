@@ -14,7 +14,7 @@ component {
 	// Java Integration
 	this.javaSettings = { loadPaths : [ ".\lib" ], loadColdFusionClassPath : true, reloadOnChange : false };
 
-	this.datasource = "coldbox";
+	this.datasource = "quick_blog_example";
 
 	// COLDBOX STATIC PROPERTY, DO NOT CHANGE UNLESS THIS IS NOT THE ROOT OF YOUR COLDBOX APP
 	COLDBOX_APP_ROOT_PATH = getDirectoryFromPath( getCurrentTemplatePath() );
