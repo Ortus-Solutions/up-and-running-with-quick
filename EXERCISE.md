@@ -1,5 +1,15 @@
 # Exercises
 
+## Step 3 Exercise
+
+Goal: Create a new Post from the UI
+
+1. Create a new form for creating a Post.  Ensure the user must be logged in to access it.
+2. Handle validation and saving of a new Post. On success, `relocate` to the `posts.index` page with a `cbmessagebox` message.
+3. Show the author's name on the Post card.
+4. Create a second Post from the UI. Notice the Posts are sorting in ascending order by `id`.
+5. Order the posts in descending order by `createdDate`.
+
 ## Step 2 Exercise
 
 Goal: Show all existing Posts
