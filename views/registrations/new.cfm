@@ -4,6 +4,28 @@
     <form method="POST" action="#event.buildLink( "registrations" )#">
         <input type="hidden" name="_token" value="#csrfGenerateToken()#" />
         <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input name="firstName" type="text" class="form-control" id="firstName" />
+            <cfif prc.errors.keyExists( "firstName" )>
+                <small class="form-text text-danger">
+                    <cfloop array="#prc.errors.firstName#" index="error">
+                        <p>#error.message#</p>
+                    </cfloop>
+                </small>
+            </cfif>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input name="lastName" type="text" class="form-control" id="lastName" />
+            <cfif prc.errors.keyExists( "lastName" )>
+                <small class="form-text text-danger">
+                    <cfloop array="#prc.errors.lastName#" index="error">
+                        <p>#error.message#</p>
+                    </cfloop>
+                </small>
+            </cfif>
+        </div>
+        <div class="form-group">
             <label for="email">Email Address:</label>
             <input name="email" type="email" class="form-control" id="email" />
             <cfif prc.errors.keyExists( "email" )>
