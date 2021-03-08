@@ -1,5 +1,6 @@
 <cfoutput>
     <h1>Posts</h1>
+    <a href="#event.buildLink( "posts.new" )#">Write a new post</a>
     <cfif prc.posts.isEmpty()>
         <div class="card mb-3">
             <div class="card-body">
