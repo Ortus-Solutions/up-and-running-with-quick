@@ -1,5 +1,17 @@
 # Exercises
 
+## Step 2 Exercise
+
+Goal: Show all existing Posts
+
+1. Create a migration for a `posts` table.
+2. Create a Quick entity for a `Post`.
+3. Create a `posts` handler and `index` action to show all posts.
+4. Show all posts on the `index` view.
+5. Provide an empty state view in `posts.index`.
+6. Add a link to create a new post.
+7. Link to the new `posts.index` route from the navbar.
+
 ## Step 1 Exercise
 
 Goal: Capture addition user information in the registration form.
