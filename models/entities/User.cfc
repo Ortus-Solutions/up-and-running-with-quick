@@ -5,6 +5,8 @@ component extends="quick.models.BaseEntity" accessors="true" {
 	property name="id";
 	property name="email";
 	property name="password";
+    property name="firstName";
+    property name="lastName";
 
 	public User function setPassword( required string password ){
 		return assignAttribute( "password", bcrypt.hashPassword( arguments.password ) );
