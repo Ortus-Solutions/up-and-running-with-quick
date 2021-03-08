@@ -4,6 +4,8 @@ component {
 		// Set Full Rewrites
 		setFullRewrites( true );
 
+        resources( "posts" );
+
 		route( "/login" ).withHandler( "sessions" ).toAction( { "GET" : "new", "POST" : "create" } );
 
 		route( "/logout", "sessions.delete" );
