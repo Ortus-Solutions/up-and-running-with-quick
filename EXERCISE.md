@@ -1,5 +1,15 @@
 # Exercises
 
+## Step 11 Exercise
+
+Goal: Reduce queries with subselects and relationship counts
+
+1. Replace eager loading the author with an `authorName` subselect on `posts.index`.
+2. Show the total number of comments for each post on the `posts.index` page.
+3. Show the total number of comments on the `posts.show` page in the Comments header.
+4. Show the number of likes for each post on the `posts.index` page.
+4. Show the number of likes on the like button on the `posts.show` page.
+
 ## Step 10 Exercise
 
 Goal: Allow async liking of posts
