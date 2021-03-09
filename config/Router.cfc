@@ -4,6 +4,11 @@ component {
 		// Set Full Rewrites
 		setFullRewrites( true );
 
+        route( "/posts/:postId/likes" )
+            .withHandler( "PostLikes" )
+            .toAction( {
+                "POST": "create"
+            } );
         post( "/posts/:postId/comments", "PostComments.create" );
         resources( "posts" );
 
