@@ -16,4 +16,18 @@ component {
         );
     }
 
+    function delete( event, rc, prc ) {
+        variables.likeService
+            .where( "postId", rc.postId )
+            .where( "userId", auth().getUserId() )
+            .deleteAll();
+
+        event.renderData(
+            statusCode = 204,
+            statusText = "No Content",
+            type = "text",
+            data = ""
+        );
+    }
+
 }

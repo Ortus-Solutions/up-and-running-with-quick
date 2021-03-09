@@ -7,7 +7,8 @@ component {
         route( "/posts/:postId/likes" )
             .withHandler( "PostLikes" )
             .toAction( {
-                "POST": "create"
+                "POST": "create",
+                "DELETE": "delete"
             } );
         post( "/posts/:postId/comments", "PostComments.create" );
         resources( "posts" );
