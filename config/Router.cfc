@@ -12,6 +12,8 @@ component {
 
 		resources( resource = "registrations", only = [ "new", "create" ] );
 
+        route( "/404", "Main.fourOhFour" );
+
 		// Conventions based routing
 		route( ":handler/:action?" ).end();
 	}

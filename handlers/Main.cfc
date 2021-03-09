@@ -1,9 +1,13 @@
-component extends="coldbox.system.EventHandler" secured {
+component extends="coldbox.system.EventHandler" {
 
 	// Default Action
-	function index( event, rc, prc ){
+	function index( event, rc, prc ) secured {
 		prc.welcomeMessage = "Welcome to ColdBox!";
 		event.setView( "main/index" );
+	}
+
+    function fourOhFour( event, rc, prc ) {
+		event.setView( "main/404" );
 	}
 
 	/************************************** IMPLICIT ACTIONS *********************************************/
@@ -30,6 +34,10 @@ component extends="coldbox.system.EventHandler" secured {
 		// Grab Exception From private request collection, placed by ColdBox Exception Handling
 		var exception = prc.exception;
 		// Place exception handler below:
+        if ( exception.getType() == "EntityNotFound" ) {
+			event.setHTTPHeader( statusCode = 404 );
+			relocate( "404" );
+		}
 	}
 
 }
