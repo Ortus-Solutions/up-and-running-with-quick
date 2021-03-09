@@ -52,4 +52,32 @@ component {
         event.setView( "posts/edit" );
     }
 
+    function update( event, rc, prc ) secured {
+        var post = getInstance( "Post" ).findOrFail( rc.id );
+        cbsecure().secureWhen( function( user ) {
+            return post.getUserID() != user.getID();
+        } );
+
+        var result = validate( target = rc, constraints = {
+            "title": { "required": true },
+            "body": { "required": true }
+        } );
+
+        if ( result.hasErrors() ) {
+			flash.put( "errors", result.getAllErrorsAsStruct() );
+			redirectBack();
+			return;
+		}
+
+        post.update( {
+			"title": rc.title,
+			"body": rc.body,
+            "modifiedDate": now()
+		} );
+
+        messagebox.success( "Your post was successfully updated!" );
+
+        relocate( "posts.#post.getID()#" );
+    }
+
 }
