@@ -43,4 +43,13 @@ component {
         event.setView( "posts/show" );
     }
 
+    function edit( event, rc, prc ) secured {
+        param prc.errors = flash.get( "errors", {} );
+        prc.post = getInstance( "Post" ).findOrFail( rc.id );
+        cbsecure().secureWhen( function( user ) {
+            return prc.post.getUserID() != user.getID();
+        } );
+        event.setView( "posts/edit" );
+    }
+
 }
