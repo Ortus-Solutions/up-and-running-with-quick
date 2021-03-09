@@ -4,7 +4,7 @@ component {
 
     function index( event, rc, prc ) {
         prc.posts = getInstance( "Post" )
-            .with( "author" )
+            .with( [ "author", "tags" ] )
             .latest()
             .get();
 
