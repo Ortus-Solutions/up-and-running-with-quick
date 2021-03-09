@@ -17,6 +17,13 @@
                     <h6 class="card-subtitle">By #post.getAuthor().getFullName()#</h6>
                     <p class="card-text">#post.getBody()#</p>
                 </div>
+                <cfif post.getTags().len()>
+                    <div class="card-footer">
+                        <cfloop array="#post.getTags()#" index="tag">
+                            <span class="badge badge-pill badge-primary">#tag.getName()#</span>
+                        </cfloop>
+                    </div>
+                </cfif>
             </div>
         </cfloop>
     </cfif>
