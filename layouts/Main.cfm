@@ -22,6 +22,11 @@
 		</button>
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#event.buildLink( "posts" )#">Posts</a>
+                </li>
+            </ul>
 			<!---About --->
             <ul class="nav navbar-nav ml-auto">
                 <cfif auth().guest()>
