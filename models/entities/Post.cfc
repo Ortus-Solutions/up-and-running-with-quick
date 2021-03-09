@@ -15,4 +15,8 @@ component extends="quick.models.BaseEntity" accessors="true" {
         return hasMany( "Comment" );
     }
 
+    function scopeLatest( qb ) {
+        qb.orderByDesc( "createdDate" );
+    }
+
 }

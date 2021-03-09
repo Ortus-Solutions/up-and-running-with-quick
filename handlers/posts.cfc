@@ -4,7 +4,7 @@ component {
 
     function index( event, rc, prc ) {
         prc.posts = getInstance( "Post" )
-            .orderByDesc( "createdDate" )
+            .latest()
             .get();
 
         event.setView( "posts/index" );
