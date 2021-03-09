@@ -19,9 +19,15 @@
                 </div>
                 <cfif post.getTags().len()>
                     <div class="card-footer">
-                        <cfloop array="#post.getTags()#" index="tag">
-                            <span class="badge badge-pill badge-primary">#tag.getName()#</span>
-                        </cfloop>
+                        <div class="text-primary">
+                            <i class="far fa-comments"></i>
+                            #post.getCommentsCount()# #post.getCommentsCount() == 1 ? 'comment' : 'comments'#
+                        </div>
+                        <div>
+                            <cfloop array="#post.getTags()#" index="tag">
+                                <span class="badge badge-pill badge-primary">#tag.getName()#</span>
+                            </cfloop>
+                        </div>
                     </div>
                 </cfif>
             </div>
