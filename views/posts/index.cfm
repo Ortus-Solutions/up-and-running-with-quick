@@ -20,8 +20,15 @@
                 <cfif post.getTags().len()>
                     <div class="card-footer">
                         <div class="text-primary">
-                            <i class="far fa-comments"></i>
-                            #post.getCommentsCount()# #post.getCommentsCount() == 1 ? 'comment' : 'comments'#
+                            <span class="mr-3">
+                                <i class="far fa-comments"></i>
+                                #post.getCommentsCount()# #post.getCommentsCount() == 1 ? 'comment' : 'comments'#
+                            </span>
+                            <span>
+                                <i class="far fa-thumbs-up"></i>
+                                #post.getLikesCount()# #post.getLikesCount() == 1 ? 'like' : 'likes'#
+                            </span>
+
                         </div>
                         <div>
                             <cfloop array="#post.getTags()#" index="tag">

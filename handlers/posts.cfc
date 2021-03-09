@@ -5,7 +5,7 @@ component {
     function index( event, rc, prc ) {
         prc.posts = getInstance( "Post" )
             .with( [ "tags" ] )
-            .withCount( [ "comments" ] )
+            .withCount( [ "comments", "likes" ] )
             .addAuthorName()
             .latest()
             .get();
