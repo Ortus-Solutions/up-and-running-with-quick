@@ -9,7 +9,7 @@ component extends="quick.models.BaseEntity" accessors="true" {
     property name="lastName";
 
     function posts() {
-        return hasMany( "Post" );
+        return hasMany( "Post" ).latest();
     }
 
     function likes() {
