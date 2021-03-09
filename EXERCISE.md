@@ -1,5 +1,14 @@
 # Exercises
 
+## Step 5 Exercise
+
+Goal: Allow for editing, updating, and deleting of Posts
+
+1. Add an edit form.  Ensure that only the author of a Post can view this form.
+2. Handle validation and updating of Posts.  Ensure that only the author of a Post can edit the Post. Relocate back to the `posts.show` route.
+3. Add a link to delete a Post on the edit page when the logged in User is the author of the Post.
+4. Handle deleting a Post.  Ensure that only the author of a Post can delete the Post.  Relocate back to the `posts.index` route.
+
 ## Step 4 Exercise
 
 Goal: Display a single Post
