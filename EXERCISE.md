@@ -1,5 +1,14 @@
 # Exercises
 
+## Step 4 Exercise
+
+Goal: Display a single Post
+
+1. Create a new action for `show` to load the Post with the given id in the url.
+2. Display the post in a new `posts.show` view. Include a link back to the `posts.index` page.
+3. Link the title of each Post on the `posts.index` page to the new `posts.show` route.
+4. Handle the `EntityNotFound` exception thrown by Quick to show a 404 page.
+
 ## Step 3 Exercise
 
 Goal: Create a new Post from the UI
