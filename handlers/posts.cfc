@@ -18,9 +18,12 @@ component {
     }
 
     function create( event, rc, prc ) secured {
+        param rc.tags = "";
+
         var result = validate( target = rc, constraints = {
             "title": { "required": true },
-            "body": { "required": true }
+            "body": { "required": true },
+            "tags": { "required": false }
         } );
 
         if ( result.hasErrors() ) {
@@ -29,10 +32,15 @@ component {
 			return;
 		}
 
-        var post = auth().user().posts().create( {
-			"title": rc.title,
-			"body": rc.body
-		} );
+        transaction action="begin" {
+            var post = auth().user().posts().create( {
+                "title": rc.title,
+                "body": rc.body
+            } );
+
+            post.tags().sync( rc.tags.listToArray() );
+        }
+
 
         messagebox.success( 'Your post "#post.getTitle()#" has been created!' );
 
