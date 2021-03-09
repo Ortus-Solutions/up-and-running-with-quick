@@ -35,7 +35,7 @@
     </form>
 	<a href="#event.buildLink( "posts" )#">Back</a>
     <hr />
-	<h3>Comments</h3>
+	<h3>Comments (#prc.post.getCommentsCount()#)</h3>
     <cfif prc.post.getComments().isEmpty()>
 	    <div class="card card-body bg-light mb-2">
 	        <p>No comments yet.</p>
