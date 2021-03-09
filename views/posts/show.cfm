@@ -24,12 +24,16 @@
         <cfelseif prc.post.hasLikeFrom( auth().user() )>
             <input type="hidden" name="liked" value="true" />
             <button name="submit" type="submit" class="btn btn-success">
-                <i id="like-icon" class="fas fa-thumbs-up"></i> Like
+                <i id="like-icon" class="fas fa-thumbs-up"></i>
+                Like
+                <span id="likes-count" class="ml-2 badge badge-dark">#prc.post.getLikesCount()#</span>
             </button>
         <cfelse>
             <input type="hidden" name="liked" value="false" />
             <button name="submit" type="submit" class="btn btn-outline-secondary">
-                <i id="like-icon" class="far fa-thumbs-up"></i> Like
+                <i id="like-icon" class="far fa-thumbs-up"></i>
+                Like
+                <span id="likes-count" class="ml-2 badge badge-dark">#prc.post.getLikesCount()#</span>
             </button>
         </cfif>
     </form>
@@ -72,6 +76,7 @@
 <script>
     <cfoutput>var #toScript(prc.post.getID(), "postId")#;</cfoutput>
     var likeIcon = document.querySelector("#like-icon");
+    var likesCount = document.querySelector("#likes-count");
     document.querySelector("#likeForm").addEventListener("submit", function(e) {
         e.preventDefault();
         var liked = e.target.elements.liked.value === "true";
@@ -79,6 +84,7 @@
             method: liked ? "DELETE" : "POST"
         }).then(function() {
             e.target.elements.liked.value = String(!liked);
+            likesCount.textContent = String(parseInt(likesCount.textContent) + (liked ? -1 : 1));
             e.target.elements.submit.classList.toggle("btn-success", !liked);
             e.target.elements.submit.classList.toggle("btn-outline-secondary", liked);
             likeIcon.classList.toggle("fas", !liked);

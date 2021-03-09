@@ -53,7 +53,7 @@ component {
         param prc.errors = flash.get( "errors", {} );
         prc.post = getInstance( "Post" )
             .with( "comments.commenter" )
-            .withCount( [ "comments" ] )
+            .withCount( [ "comments", "likes" ] )
             .findOrFail( rc.id );
         event.setView( "posts/show" );
     }
