@@ -9,6 +9,11 @@
             </cfif>
         </h2>
 		<small class="mb-4">By #prc.post.getAuthor().getFullName()#</small>
+        <div class="mb-4">
+            <cfloop array="#prc.post.getTags()#" index="tag">
+                <span class="badge badge-pill badge-primary">#tag.getName()#</span>
+            </cfloop>
+        </div>
         <p>#prc.post.getBody()#</p>
     </article>
 	<a href="#event.buildLink( "posts" )#">Back</a>
