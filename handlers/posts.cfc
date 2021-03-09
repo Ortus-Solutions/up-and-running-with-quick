@@ -38,4 +38,9 @@ component {
 		relocate( "posts" );
     }
 
+    function show( event, rc, prc ) {
+        prc.post = getInstance( "Post" ).findOrFail( rc.id );
+        event.setView( "posts/show" );
+    }
+
 }
