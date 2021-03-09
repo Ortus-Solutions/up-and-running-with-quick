@@ -4,6 +4,7 @@ component {
 		// Set Full Rewrites
 		setFullRewrites( true );
 
+        post( "/posts/:postId/comments", "PostComments.create" );
         resources( "posts" );
 
 		route( "/login" ).withHandler( "sessions" ).toAction( { "GET" : "new", "POST" : "create" } );

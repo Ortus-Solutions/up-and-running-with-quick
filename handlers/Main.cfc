@@ -34,6 +34,11 @@ component extends="coldbox.system.EventHandler" {
 		// Grab Exception From private request collection, placed by ColdBox Exception Handling
 		var exception = prc.exception;
 		// Place exception handler below:
+        if ( exception.getType() == "ValidationException" ) {
+            flash.put( "errors", result.getAllErrorsAsStruct() );
+            redirectBack();
+		}
+
         if ( exception.getType() == "EntityNotFound" ) {
 			event.setHTTPHeader( statusCode = 404 );
 			relocate( "404" );
