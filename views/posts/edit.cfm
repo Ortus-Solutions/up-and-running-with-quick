@@ -28,6 +28,26 @@
                 </small>
             </cfif>
 		</div>
+        <div class="form-group">
+			<label for="tags">Tags</label>
+			<select name="tags" id="tags" multiple="true" class="form-control">
+                <cfloop array="#prc.tags#" index="tag">
+                    <option
+                        value="#tag.getID()#"
+                        <cfif prc.post.hasTag( tag )>selected</cfif>
+                    >
+                        #tag.getName()#
+                    </option>
+                </cfloop>
+            </select>
+            <cfif prc.errors.keyExists( "tags" )>
+                <small class="form-text text-danger">
+                    <cfloop array="#prc.errors.tags#" index="error">
+                        <p>#error.message#</p>
+                    </cfloop>
+                </small>
+            </cfif>
+		</div>
 		<a href="#event.buildLink( "posts" )#" class="btn btn-outline">Back</a>
 		<button type="submit" class="btn btn-primary">Submit</button>
 	#html.endForm()#

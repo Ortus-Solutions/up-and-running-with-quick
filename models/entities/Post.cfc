@@ -23,4 +23,10 @@ component extends="quick.models.BaseEntity" accessors="true" {
         qb.orderByDesc( "createdDate" );
     }
 
+    public boolean function hasTag( required Tag tag ) {
+        return this.getTags().filter( function( t ) {
+            return t.getID() == tag.getID();
+        } ).len();
+    }
+
 }

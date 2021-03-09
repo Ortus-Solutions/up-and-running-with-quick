@@ -58,6 +58,7 @@ component {
     function edit( event, rc, prc ) secured {
         param prc.errors = flash.get( "errors", {} );
         prc.post = auth().user().posts().findOrFail( rc.id );
+        prc.tags = getInstance( "Tag" ).all();
         event.setView( "posts/edit" );
     }
 
