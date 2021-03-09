@@ -22,12 +22,14 @@
                 <i class="far fa-thumbs-up"></i> Like
             </button>
         <cfelseif prc.post.hasLikeFrom( auth().user() )>
-            <button type="submit" class="btn btn-success">
-                <i class="fas fa-thumbs-up"></i> Like
+            <input type="hidden" name="liked" value="true" />
+            <button name="submit" type="submit" class="btn btn-success">
+                <i id="like-icon" class="fas fa-thumbs-up"></i> Like
             </button>
         <cfelse>
-            <button type="submit" class="btn btn-outline-secondary">
-                <i class="far fa-thumbs-up"></i> Like
+            <input type="hidden" name="liked" value="false" />
+            <button name="submit" type="submit" class="btn btn-outline-secondary">
+                <i id="like-icon" class="far fa-thumbs-up"></i> Like
             </button>
         </cfif>
     </form>
@@ -66,3 +68,21 @@
         #html.endForm()#
     </cfif>
 </cfoutput>
+
+<script>
+    <cfoutput>var #toScript(prc.post.getID(), "postId")#;</cfoutput>
+    var likeIcon = document.querySelector("#like-icon");
+    document.querySelector("#likeForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        var liked = e.target.elements.liked.value === "true";
+        fetch(`/posts/${postId}/likes`, {
+            method: liked ? "DELETE" : "POST"
+        }).then(function() {
+            e.target.elements.liked.value = String(!liked);
+            e.target.elements.submit.classList.toggle("btn-success", !liked);
+            e.target.elements.submit.classList.toggle("btn-outline-secondary", liked);
+            likeIcon.classList.toggle("fas", !liked);
+            likeIcon.classList.toggle("far", liked);
+        });
+    });
+</script>
