@@ -1,5 +1,13 @@
 # Exercises
 
+## Step 7 Exercise
+
+Goal: Make existing code cleaner, more readable, and more expressive using Scopes and Relationships
+
+1. Convert the `orderByDesc( "createdDate" )` to a scope called `latest`.
+2. Hide the implementation detail of `userId` when creating a Post by utilizing the `posts` relationship on User.
+3. Remove the cbsecurity check by constraining the Posts queries to the logged in user's posts using the `posts` relationship.
+
 ## Step 6 Exercise
 
 Goal: Add a Commenting System
