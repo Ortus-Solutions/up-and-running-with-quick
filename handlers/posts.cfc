@@ -63,11 +63,14 @@ component {
     }
 
     function update( event, rc, prc ) secured {
+        param rc.tags = "";
+
         var post = auth().user().posts().findOrFail( rc.id );
 
         var result = validate( target = rc, constraints = {
             "title": { "required": true },
-            "body": { "required": true }
+            "body": { "required": true },
+            "tags": { "required": false }
         } );
 
         if ( result.hasErrors() ) {
@@ -81,6 +84,8 @@ component {
 			"body": rc.body,
             "modifiedDate": now()
 		} );
+
+        post.tags().sync( rc.tags.listToArray() );
 
         messagebox.success( "Your post was successfully updated!" );
 
