@@ -45,18 +45,12 @@ component {
 
     function edit( event, rc, prc ) secured {
         param prc.errors = flash.get( "errors", {} );
-        prc.post = getInstance( "Post" ).findOrFail( rc.id );
-        cbsecure().secureWhen( function( user ) {
-            return prc.post.getUserID() != user.getID();
-        } );
+        prc.post = auth().user().posts().findOrFail( rc.id );
         event.setView( "posts/edit" );
     }
 
     function update( event, rc, prc ) secured {
-        var post = getInstance( "Post" ).findOrFail( rc.id );
-        cbsecure().secureWhen( function( user ) {
-            return post.getUserID() != user.getID();
-        } );
+        var post = auth().user().posts().findOrFail( rc.id );
 
         var result = validate( target = rc, constraints = {
             "title": { "required": true },
@@ -81,10 +75,7 @@ component {
     }
 
     function delete( event, rc, prc ) {
-        var post = getInstance( "Post" ).findOrFail( rc.id );
-        cbsecure().secureWhen( function( user ) {
-            return post.getUserID() != user.getID();
-        } );
+        var post = auth().user().posts().findOrFail( rc.id );
         post.delete();
         messagebox.info( "Your post was deleted." );
         relocate( "posts" );
