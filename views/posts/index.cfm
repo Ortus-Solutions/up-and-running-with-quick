@@ -11,7 +11,9 @@
         <cfloop array="#prc.posts#" index="post">
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">#post.getTitle()#</h5>
+                    <a href="#event.buildLink( "posts.#post.getID()#" )#">
+                        <h5 class="card-title">#post.getTitle()#</h5>
+                    </a>
                     <h6 class="card-subtitle">By #post.getAuthor().getFullName()#</h6>
                     <p class="card-text">#post.getBody()#</p>
                 </div>
