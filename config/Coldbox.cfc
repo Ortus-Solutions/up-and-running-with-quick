@@ -128,6 +128,12 @@ component {
 	 */
 	function development(){
 		coldbox.customErrorTemplate = "/coldbox/system/exceptions/Whoops.cfm";
+        debugger.showTracerPanel = false;
+        debugger.showInfoPanel = false;
+        debugger.showCachePanel = false;
+        debugger.showRCPanel = false;
+        debugger.showModulesPanel = false;
+        debugger.expandedQBPanel = true;
 	}
 
 	function testing(){
