@@ -11,4 +11,8 @@ component extends="quick.models.BaseEntity" accessors="true" {
         return belongsTo( "User" );
     }
 
+    function comments() {
+        return hasMany( "Comment" );
+    }
+
 }
