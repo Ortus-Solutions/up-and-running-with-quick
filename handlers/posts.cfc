@@ -27,10 +27,9 @@ component {
 			return;
 		}
 
-        var post = getInstance( "Post" ).create( {
+        var post = auth().user().posts().create( {
 			"title": rc.title,
-			"body": rc.body,
-            "userId": auth().getUserId()
+			"body": rc.body
 		} );
 
         messagebox.success( 'Your post "#post.getTitle()#" has been created!' );

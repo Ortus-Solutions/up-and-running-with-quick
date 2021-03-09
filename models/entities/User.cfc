@@ -8,6 +8,10 @@ component extends="quick.models.BaseEntity" accessors="true" {
     property name="firstName";
     property name="lastName";
 
+    function posts() {
+        return hasMany( "Post" );
+    }
+
 	public User function setPassword( required string password ){
 		return assignAttribute( "password", bcrypt.hashPassword( arguments.password ) );
 	}
