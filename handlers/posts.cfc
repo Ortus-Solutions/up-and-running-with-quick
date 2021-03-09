@@ -80,4 +80,14 @@ component {
         relocate( "posts.#post.getID()#" );
     }
 
+    function delete( event, rc, prc ) {
+        var post = getInstance( "Post" ).findOrFail( rc.id );
+        cbsecure().secureWhen( function( user ) {
+            return post.getUserID() != user.getID();
+        } );
+        post.delete();
+        messagebox.info( "Your post was deleted." );
+        relocate( "posts" );
+    }
+
 }
