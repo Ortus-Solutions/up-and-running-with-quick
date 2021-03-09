@@ -27,6 +27,14 @@ component extends="quick.models.BaseEntity" accessors="true" {
         qb.orderByDesc( "createdDate" );
     }
 
+    function scopeAddAuthorName( qb ) {
+        qb.addSubselect( "authorName", function( q ) {
+            return q.selectRaw( "CONCAT(firstName, ' ', lastName) AS fullName" )
+                .from( "users" )
+                .whereColumn( "users.id", "posts.userId" );
+        } );
+    }
+
     public boolean function hasTag( required Tag tag ) {
         return this.getTags().filter( function( t ) {
             return t.getID() == tag.getID();
