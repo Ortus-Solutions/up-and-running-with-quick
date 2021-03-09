@@ -8,7 +8,7 @@
                 </a>
             </cfif>
         </h2>
-		<small class="mb-4">By #prc.post.getAuthor().getFullName()#</small>
+		<small class="mb-4">By <a href="#event.buildLink( "authors.#prc.post.getAuthor().getID()#" )#">#prc.post.getAuthor().getFullName()#</a></small>
         <div class="mb-4">
             <cfloop array="#prc.post.getTags()#" index="tag">
                 <span class="badge badge-pill badge-primary">#tag.getName()#</span>
@@ -47,7 +47,7 @@
 	<cfelse>
 	    <cfloop array="#prc.post.getComments()#" index="comment">
 	        <div class="card card-body bg-light mb-2">
-	            <small>#dateTimeFormat( comment.getCreatedDate(), "full" )# by #comment.getCommenter().getFullName()#</small>
+	            <small>#dateTimeFormat( comment.getCreatedDate(), "full" )# by <a href="#event.buildLink( "authors.#comment.getCommenter().getID()#" )#">#comment.getCommenter().getFullName()#</a></small>
 	            <p>#comment.getBody()#</p>
 	        </div>
 	    </cfloop>
