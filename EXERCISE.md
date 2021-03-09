@@ -1,5 +1,17 @@
 # Exercises
 
+## Step 6 Exercise
+
+Goal: Add a Commenting System
+
+1. Create a migration to create a `comments` table.
+2. Create a `Comment` entity.
+3. Add a relationship from `Comment` to `Post` and from `Comment` to `User`.
+4. Add the inverse relationship from `Post` to `Comment`.
+5. Show the new comment form on the `posts.show` view when the user is logged in.
+6. Validate and create a Comment associated with a Post. (The User must be logged in to perform this action.)
+7. Show all Comments underneath a Post.  Comments should display their commenter's name, the time it was posted, and the body of the Comment.
+
 ## Step 5 Exercise
 
 Goal: Allow for editing, updating, and deleting of Posts
