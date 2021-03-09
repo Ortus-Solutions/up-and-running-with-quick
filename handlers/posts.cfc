@@ -39,6 +39,7 @@ component {
     }
 
     function show( event, rc, prc ) {
+        param prc.errors = flash.get( "errors", {} );
         prc.post = getInstance( "Post" ).findOrFail( rc.id );
         event.setView( "posts/show" );
     }
