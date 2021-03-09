@@ -14,6 +14,18 @@
 	<a href="#event.buildLink( "posts" )#">Back</a>
     <hr />
 	<h3>Comments</h3>
+    <cfif prc.post.getComments().isEmpty()>
+	    <div class="card card-body bg-light mb-2">
+	        <p>No comments yet.</p>
+	    </div>
+	<cfelse>
+	    <cfloop array="#prc.post.getComments()#" index="comment">
+	        <div class="card card-body bg-light mb-2">
+	            <small>#dateTimeFormat( comment.getCreatedDate(), "full" )# by #comment.getCommenter().getFullName()#</small>
+	            <p>#comment.getBody()#</p>
+	        </div>
+	    </cfloop>
+	</cfif>
     <cfif auth().check()>
         <hr />
         #html.startForm( method = "POST", action = event.buildLink( "posts.#prc.post.getId()#.comments" ) )#
