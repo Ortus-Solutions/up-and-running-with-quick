@@ -12,6 +12,10 @@ component extends="quick.models.BaseEntity" accessors="true" {
         return hasMany( "Post" );
     }
 
+    function likes() {
+        return hasMany( "Like" );
+    }
+
 	public User function setPassword( required string password ){
 		return assignAttribute( "password", bcrypt.hashPassword( arguments.password ) );
 	}

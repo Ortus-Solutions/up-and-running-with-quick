@@ -19,6 +19,10 @@ component extends="quick.models.BaseEntity" accessors="true" {
         return belongsToMany( "Tag" );
     }
 
+    function likes() {
+        return hasMany( "Like" );
+    }
+
     function scopeLatest( qb ) {
         qb.orderByDesc( "createdDate" );
     }
