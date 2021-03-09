@@ -3,7 +3,10 @@ component {
     property name="messagebox" inject="messagebox@cbmessagebox";
 
     function index( event, rc, prc ) {
-        prc.posts = getInstance( "Post" ).all();
+        prc.posts = getInstance( "Post" )
+            .orderByDesc( "createdDate" )
+            .get();
+
         event.setView( "posts/index" );
     }
 
