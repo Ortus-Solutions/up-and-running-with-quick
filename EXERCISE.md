@@ -1,5 +1,16 @@
 # Exercises
 
+## Step 8 Exercise
+
+Goal: Solve the N+1 problem with Eager Loading
+
+1. Ensure you have at least 10 posts and that at least one of your posts has at least 5 comments in order to see the N+1 problem and the fix.
+2. Install `cbdebugger`.
+3. Load the `posts.index` view and check out the cbdebugger view. Notice that we are executing a bunch of queries for our single page.
+4. Eager load the `author` relationship for our `posts.index` route.
+5. Eager load the `commenter` relationship for the `posts.show` route.
+
+
 ## Step 7 Exercise
 
 Goal: Make existing code cleaner, more readable, and more expressive using Scopes and Relationships
