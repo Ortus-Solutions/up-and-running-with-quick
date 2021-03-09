@@ -13,6 +13,7 @@ component {
 
     function new( event, rc, prc ) secured {
         param prc.errors = flash.get( "errors", {} );
+        prc.tags = getInstance( "Tag" ).all();
         event.setView( "posts/new" );
     }
 
