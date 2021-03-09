@@ -1,5 +1,21 @@
 # Exercises
 
+## Step 9 Exercise
+
+Goal: Allow adding tags to posts
+
+1. Create a migration to add a `tags` table. Populate it with some pre-made tags.
+2. Create a `Tag` entity.
+3. Create a migration for the `posts_tags` pivot table between `posts` and `tags`
+4. Show a multiple select field on the `posts.new` form with all the tags.
+5. Validate and sync tags when creating the new Post.
+6. Show associated tags on the `posts.index` view.
+7. Show associated tags on the `posts.show` view.
+8. Show a multiple select field on the `posts.edit` form with all the tags. The currently associated tags should be pre-selected.
+9. Validate and sync tags when updating the Post.
+10. Make sure to eager load the tags on the `posts.index` view.
+
+
 ## Step 8 Exercise
 
 Goal: Solve the N+1 problem with Eager Loading
