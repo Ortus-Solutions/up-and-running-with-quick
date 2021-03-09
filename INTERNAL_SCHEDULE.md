@@ -26,11 +26,11 @@
 04:00 PM - Finish
 
 ## Day 2 
-09:00 AM - Scopes and Using Relationships as Scopes
-09:15 AM - **EXERCISE:** Refactor to `latest` in `posts.index` and use `auth().user().posts().create()` in `posts.create`.
-09:30 AM - `HasMany` Relationships
-09:45 AM - **EXERCISE:** Add Comment Form and Show Comments on a Post
+09:00 AM - `HasMany` Relationships
+09:15 AM - **EXERCISE:** Add Comment Form and Show Comments on a Post
            **BONUS:** Add pagination to comments
+09:45 AM - Scopes and Using Relationships as Scopes
+10:00 AM - **EXERCISE:** Refactor to `latest` in `posts.index` and use `auth().user().posts().create()` in `posts.create`.
 10:15 AM - Break
 10:30 AM - The N+1 Problem and Eager Loading
 10:45 AM - **EXERCISE:** Use cbdebugger and eager loading to fix the N+1 problem on Comments and Post index
