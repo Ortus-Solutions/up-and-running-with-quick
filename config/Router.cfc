@@ -4,12 +4,14 @@ component {
 		// Set Full Rewrites
 		setFullRewrites( true );
 
+        get( "/authors/:authorID", "AuthorProfiles.show" );
+
         route( "/posts/:postId/likes" )
             .withHandler( "PostLikes" )
             .toAction( {
                 "POST": "create",
                 "DELETE": "delete"
-            } );
+            } );    
         post( "/posts/:postId/comments", "PostComments.create" );
         resources( "posts" );
 
