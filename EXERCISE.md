@@ -1,5 +1,19 @@
 # Exercises
 
+## Step 12 Exercise
+
+Goal: Utilize TDD to create an Author Profile page
+
+1. Create a test database.
+2. Configure your application to run tests with the test database as the default datasource.
+3. Create a failing test case for visiting an existing author profile page.  The following expectations should be met:
+    a. It should be reached by visiting `/authors/:authorID`.
+    b. It should show only the posts written by that author.
+4. When working TDD, try to only do the least amount of work needed to make the next different error appear.  Try to guess the next error you will see before re-running the test.
+5. Once the test is passing, look for opportunities to refactor.
+6. Fill out the new `author-profiles/show` view.
+7. Link the author names from the `posts.index` and `posts.show` pages to the new author profile pages.
+
 ## Step 11 Exercise
 
 Goal: Reduce queries with subselects and relationship counts
