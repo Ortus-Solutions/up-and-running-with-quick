@@ -33,4 +33,10 @@ component extends="quick.models.BaseEntity" accessors="true" {
         } ).len();
     }
 
+    public boolean function hasLikeFrom( required User user ) {
+        return this.getLikes().filter( function( l ) {
+            return l.getUserID() == user.getID();
+        } ).len();
+    }
+
 }

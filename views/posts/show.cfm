@@ -16,6 +16,21 @@
         </div>
         <p>#prc.post.getBody()#</p>
     </article>
+    <form id="likeForm">
+        <cfif NOT auth().check()>
+            <button title="Log in to like this post" type="submit" class="btn btn-outline-secondary" disabled>
+                <i class="far fa-thumbs-up"></i> Like
+            </button>
+        <cfelseif prc.post.hasLikeFrom( auth().user() )>
+            <button type="submit" class="btn btn-success">
+                <i class="fas fa-thumbs-up"></i> Like
+            </button>
+        <cfelse>
+            <button type="submit" class="btn btn-outline-secondary">
+                <i class="far fa-thumbs-up"></i> Like
+            </button>
+        </cfif>
+    </form>
 	<a href="#event.buildLink( "posts" )#">Back</a>
     <hr />
 	<h3>Comments</h3>
