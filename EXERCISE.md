@@ -1,5 +1,16 @@
 # Exercises
 
+## Step 10 Exercise
+
+Goal: Allow async liking of posts
+
+1. Create a migration for a `likes` table.  This is our pivot table between `users` and `posts`.
+2. Create an entity for a `Like`. Define the necessary relationships between `Like`, `Post`, and `User`.
+3. Create a route, handler, and action to save a User's like of a Post. This endpoint should return a memento of the `Like` entity with a 201 Created status code.
+4. Add a route and action to remove a User's like of a Post. This endpoint should return nothing with a 204 No Content status code.
+5. Add a thumbs up "Like" button to the bottom of the `posts.show` page. The button should show selected if the logged in user has liked the post.
+6. Wire up the button to hit the correct API endpoint when clicked.
+
 ## Step 9 Exercise
 
 Goal: Allow adding tags to posts
