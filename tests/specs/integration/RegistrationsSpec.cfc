@@ -34,7 +34,13 @@ component extends="tests.resources.BaseIntegrationSpec" {
 	}
 
 	private struct function validParams( struct overrides = {} ){
-		var data = { "email" : "jon@example.com", "password" : "password", "passwordConfirmation" : "password" };
+		var data = {
+            "firstName" : "Jon",
+            "lastName" : "Doe",
+            "email" : "jon@example.com",
+            "password" : "password",
+            "passwordConfirmation" : "password"
+        };
 		structAppend( data, arguments.overrides, true );
 		return data;
 	}
