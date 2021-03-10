@@ -6,7 +6,7 @@ Interact with your database with ease using Quick, a ColdBox ORM framework.
 
 Quick is an ORM (Object Relational Mapper) written in CFML for CFML.
 
-With it you can map database tables to entities (CFCs), create relationships between entities,query and manipulate data, and persist all your changes to your database. Quick helps you give relevant names to important bits of SQL code, compose queries at runtime to get exactly the data you want in the most efficient way, and gets out of your way when you need or want to write barebones SQL.
+With it, you can map database tables to entities (CFCs), create relationships between entities,query and manipulate data, and persist all your changes to your database. Quick helps you give relevant names to important bits of SQL code, compose queries at runtime to get exactly the data you want in the most efficient way, and gets out of your way when you need or want to write barebones SQL.
 
 This workshop will teach you how to use and configure Quick while building a real-world blogging application. By the end of the workshop, attendees will have the tools and knowledge to implement Quick in their own new or existing projects.
 

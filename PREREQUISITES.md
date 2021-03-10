@@ -29,10 +29,10 @@ docker start quick_blog_example
 docker stop quick_blog_example
 ```
 
-(You may choose to use a different database that Quick supports if you desire, but all examples will be ran against MySQL 5.7. We won't be able to support you with database-specific issues in the workshop.)
+(You may choose to use a different database that Quick supports if you desire, but all examples will be run against MySQL 5.7. We won't be able to support you with database-specific issues in the workshop.)
 
 ## MySQL Client
-You will want a SQL client to inspect and interact with your database.
+You will want an SQL client to inspect and interact with your database.
 You can use any client you would like. Here are a few we like ourselves:
 
 * [DBeaver](https://dbeaver.io/) (Cross Platform, Free)
