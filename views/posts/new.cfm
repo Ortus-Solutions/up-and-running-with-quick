@@ -39,6 +39,18 @@
                 </small>
             </cfif>
 		</div>
+        <div class="form-group">
+			<label for="publishedDate">Published Date</label>
+			<input type="datetime-local" class="form-control" name="publishedDate" id="publishedDate" aria-describedby="publishedDateHelp">
+            <small id="publishedDateHelp" class="form-text text-muted">Optional. Leave this blank to publish immediately.</small>
+            <cfif prc.errors.keyExists( "publishedDate" )>
+                <small class="form-text text-danger">
+                    <cfloop array="#prc.errors.publishedDate#" index="error">
+                        <p>#error.message#</p>
+                    </cfloop>
+                </small>
+            </cfif>
+		</div>
 		<a href="#event.buildLink( "posts" )#" class="btn btn-outline">Back</a>
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
