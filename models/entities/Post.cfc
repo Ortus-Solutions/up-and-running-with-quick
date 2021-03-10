@@ -6,6 +6,7 @@ component extends="quick.models.BaseEntity" accessors="true" {
     property name="userId";
     property name="createdDate";
     property name="modifiedDate";
+    property name="publishedDate";
 
     function author() {
         return belongsTo( "User" );
