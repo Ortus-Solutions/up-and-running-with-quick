@@ -36,6 +36,11 @@ component extends="quick.models.BaseEntity" accessors="true" {
         } );
     }
 
+    function scopePublished( qb ) {
+        qb.whereNull( "publishedDate" );
+        qb.orWhere( "publishedDate", "<=", now() );
+    }
+
     public boolean function hasTag( required Tag tag ) {
         return this.getTags().filter( function( t ) {
             return t.getID() == tag.getID();
