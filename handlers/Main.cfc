@@ -41,7 +41,7 @@ component extends="coldbox.system.EventHandler" {
 
         if ( exception.getType() == "EntityNotFound" ) {
 			event.setHTTPHeader( statusCode = 404 );
-			relocate( "404" );
+			relocate( event = "404", statusCode = 404 );
 		}
 	}
 
