@@ -7,6 +7,10 @@ component {
             .with( [ "tags" ] )
             .withCount( [ "comments", "likes" ] )
             .addAuthorName()
+            .where( function( q ) {
+                q.whereNull( "publishedDate" );
+                q.orWhere( "publishedDate", "<=", now() );
+            } )
             .latest()
             .get();
 
