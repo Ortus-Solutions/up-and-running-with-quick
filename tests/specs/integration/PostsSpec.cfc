@@ -30,6 +30,38 @@ component extends="tests.resources.BaseIntegrationSpec" {
                 expect( prc.posts[ 3 ].isSameAs( postC ) ).toBeTrue( "Third post should be postC" );
                 expect( prc.posts[ 4 ].isSameAs( postD ) ).toBeTrue( "Fourth post should be postD" );
 			} );
+
+			it( "only shows published posts", function() {
+                var author = createUser();
+                var otherAuthor = createUser();
+
+                var postA = createPost( author, {
+                    "createdDate": dateAdd( "d", -1, now() ),
+                    "publishedDate": dateAdd( "d", -1, now() )
+                } );
+                var postB = createPost( author, {
+                    "createdDate": now(),
+                    "publishedDate": dateAdd( "d", 4, now() )
+                } );
+                var postC = createPost( otherAuthor, {
+                    "createdDate": dateAdd( "d", -3, now() ),
+                    "publishedDate": "" // this equates to NULL in the database
+                } );
+                var postD = createPost( author, {
+                    "createdDate": dateAdd( "d", -4, now() ),
+                    "publishedDate": dateAdd( "d", -2, now() )
+                } );
+
+                var event = get( "/posts" );
+
+                var prc = event.getPrivateCollection();
+                expect( prc ).toHaveKey( "posts" );
+                expect( prc.posts ).toBeArray();
+                expect( prc.posts ).toHaveLength( 3 );
+                expect( prc.posts[ 1 ].isSameAs( postA ) ).toBeTrue( "First post should be postA" );
+                expect( prc.posts[ 2 ].isSameAs( postD ) ).toBeTrue( "Second post should be postD" );
+                expect( prc.posts[ 3 ].isSameAs( postC ) ).toBeTrue( "Third post should be postC" );
+			} );
         } );
     }
 
@@ -48,7 +80,8 @@ component extends="tests.resources.BaseIntegrationSpec" {
             "title": $mockData.sentence(),
             "body": $mockData.lorem( "1:3" ),
             "createdDate": now(),
-            "modifiedDate": now()
+            "modifiedDate": now(),
+            "publishedDate": ""
         }, false );
         return arguments.user.posts().create( arguments.overrides );
     }
