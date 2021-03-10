@@ -62,6 +62,23 @@ component extends="tests.resources.BaseIntegrationSpec" {
                 expect( prc.posts[ 2 ].isSameAs( postD ) ).toBeTrue( "Second post should be postD" );
                 expect( prc.posts[ 3 ].isSameAs( postC ) ).toBeTrue( "Third post should be postC" );
 			} );
+
+            it( "redirects to 404 when trying to view an unpublished post", function() {
+                var unpublishedPost = createPost( createUser(), {
+                    "publishedDate": dateAdd( "d", 5, now() )
+                } );
+
+                var event = get(
+                    route = "/posts/#unpublishedPost.getID()#",
+                    withExceptionHandling = true
+                );
+
+                var rc = event.getCollection();
+                expect( rc ).toHaveKey( "relocate_event", "The event did not attempt to relocate" );
+                expect( rc.relocate_event ).toBe( "404" );
+                expect( rc ).toHaveKey( "relocate_statusCode", "The event did not attempt to relocate" );
+                expect( rc.relocate_statusCode ).toBe( "404" );
+            } );
         } );
     }
 
