@@ -1,5 +1,25 @@
 # Exercises
 
+## Step 13 Exercise
+
+Goal: Add the ability to schedule posts to publish in the future using TDD
+
+1. Backfill a test around the `posts.index` route.
+    a. Assert that all the posts that exist in the database come back in the `latest` order.
+2. Add a failing test showing that posts with a scheduled date in the future do not appear on the page.  Let this drive the implementation.
+3. Add the scheduled publishing feature.
+    a. Add a migration to add a nullable `publishedDate` column to the `posts` table.
+    b. Add `publishedDate` as a property to `Post`.
+    c. On the `posts.index` route only bring back records with a `NULL` `publishedDate` or a `publishedDate` in the past.
+    d. Adjust the `latest` scope to handle both `publishedDate` and `createdDate`.
+4. Now that your test is passing, you can refactor.
+    a. Add a `published` scope to encapsulate the logic for when to show a Post.
+5. Add a failing test showing that unpublished posts route to the 404 page when trying to view them directly.
+6. Implement this feature using TDD.
+7. Add the new field to your `posts.new` and `posts.edit` forms.
+8. Capture the optional published date in your handler.
+9. Verify it all works as expected in your app.
+
 ## Step 12 Exercise
 
 Goal: Utilize TDD to create an Author Profile page
