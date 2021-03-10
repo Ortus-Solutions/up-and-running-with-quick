@@ -55,6 +55,7 @@ component {
         prc.post = getInstance( "Post" )
             .with( "comments.commenter" )
             .withCount( [ "comments", "likes" ] )
+            .published()
             .findOrFail( rc.id );
         event.setView( "posts/show" );
     }
