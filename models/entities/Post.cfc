@@ -25,7 +25,7 @@ component extends="quick.models.BaseEntity" accessors="true" {
     }
 
     function scopeLatest( qb ) {
-        qb.orderByDesc( "createdDate" );
+        qb.orderByRaw( "COALESCE(publishedDate, createdDate) DESC" );
     }
 
     function scopeAddAuthorName( qb ) {
